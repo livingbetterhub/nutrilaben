@@ -102,6 +102,25 @@ body {
     text-align: center;
 }
 </style>
+    <!-- Event snippet for Visualização de página conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17945409016/W82UCMzI9v0bEPjrhO1C',
+      'value': 1.0,
+      'currency': 'BRL',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 </head>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17945409016"></script>
@@ -139,7 +158,7 @@ body {
     </div>
 
     <div class="cta">
-        <a href="https://ai2y2.doctortraffox.com/l/?sub1=nutrilaben&sub2=mobile&sub3=nutrilaben-pl-google-1" target="_blank">Sprawdź szczegóły</a>
+        <a href="https://ai2y2.doctortraffox.com/l/?sub1=nutrilaben&sub2=mobile&sub3=nutrilaben-pl-google-1" target="_blank" onclick="return "gtag_report_conversion">Sprawdź szczegóły</a>
     </div>
 
     <div class="disclaimer">
